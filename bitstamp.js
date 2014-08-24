@@ -30,7 +30,7 @@ Bitstamp.prototype.postReq = function(action, callback, params) {
   params = _.extend({
     key: this.key,
     signature: signature,
-    nonce: 0
+    nonce: nonce
   }, params);
 
 	var options = {
