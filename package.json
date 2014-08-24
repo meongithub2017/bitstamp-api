@@ -1,0 +1,24 @@
+{
+  "name": "bitstamp-api",
+  "version": "0.1.0",
+  "description": "Bitstamp API Client for Node.JS",
+  "main": "bitstamp.js",
+  "dependencies": {
+    "request": ">=2.40.0",
+    "underscore": ">=1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bitstamp",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/5an1ty/bitstamp-api"
+  },
+  "author": "Ruben Callewaert",
+  "license": "MIT"
+}
