@@ -22,7 +22,7 @@ Bitstamp.prototype.postReq = function(action, callback, params) {
   if(!this.key || !this.secret || !this.client_id)
     return callback('Must provide key, secret and client ID to make this API request.');
 
-  var nonce = new Date().getTime() + '' + new Date().getMilliseconds();
+  var nonce = new Date().getTime();
   var message = nonce + this.client_id + this.key;
   var signer = crypto.createHmac('sha256', new Buffer(this.secret, 'utf8'));
   var signature = signer.update(message).digest('hex').toUpperCase();
@@ -58,13 +58,13 @@ Bitstamp.prototype.postReq = function(action, callback, params) {
 				return;
 			}
 
-			if(data.error && data.error.length && data.error === 'Invalid nonce') {
+			if(data.error && data.error.length && (data.error === 'Invalid nonce' || data.error === 'Invalid signature')) {
 				callback(new Error(data.error), null);
 			} else {
 				callback(null, data);
 			}
 		}
-    
+
 	});
 
 	return req;
