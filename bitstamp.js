@@ -22,7 +22,7 @@ Bitstamp.prototype.postReq = function(action, callback, params) {
   if(!this.key || !this.secret || !this.client_id)
     return callback('Must provide key, secret and client ID to make this API request.');
 
-  var nonce = new Date().getTime();
+  var nonce = '' + new Date().getTime();
   var message = nonce + this.client_id + this.key;
   var signer = crypto.createHmac('sha256', new Buffer(this.secret, 'utf8'));
   var signature = signer.update(message).digest('hex').toUpperCase();
