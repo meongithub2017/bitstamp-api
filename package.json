@@ -1,6 +1,6 @@
 {
   "name": "bitstamp-api",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Bitstamp API Client for Node.JS",
   "main": "bitstamp.js",
   "dependencies": {

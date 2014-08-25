@@ -58,8 +58,8 @@ Bitstamp.prototype.postReq = function(action, callback, params) {
 				return;
 			}
 
-			if(data.error && data.error.length) {
-				callback(data.error, null);
+			if(data.error && data.error.length && data.error === 'Invalid nonce') {
+				callback(new Error(data.error), null);
 			} else {
 				callback(null, data);
 			}
