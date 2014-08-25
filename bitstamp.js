@@ -64,6 +64,7 @@ Bitstamp.prototype.postReq = function(action, callback, params) {
 				callback(null, data);
 			}
 		}
+    
 	});
 
 	return req;
@@ -101,12 +102,10 @@ Bitstamp.prototype.getReq = function(action, callback, params) {
         return;
       }
 
-      if(data.error && data.error.length) {
-        callback(data.error, null);
-      } else {
-        callback(null, data);
-      }
+      callback(null, data);
+
     }
+
   });
 
   return req;
