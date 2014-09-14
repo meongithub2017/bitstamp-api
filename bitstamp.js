@@ -58,7 +58,7 @@ Bitstamp.prototype.postReq = function(action, callback, params) {
 				return;
 			}
 
-			if(data.error && data.error.length && (data.error === 'Invalid nonce' || data.error === 'Invalid signature')) {
+			if(data.error && data.error.length && (data.error === 'Invalid nonce' || data.error === 'Invalid signature' || data.errpr === 'API key not found')) {
 				callback(new Error(data.error), null);
 			} else {
 				callback(null, data);
