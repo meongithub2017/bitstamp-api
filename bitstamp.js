@@ -6,6 +6,7 @@ var Bitstamp = function(key, secret, client_id) {
   this.key = key;
   this.secret = secret;
   this.client_id = client_id;
+  this.timeoutMS = 5000;
 
   this.url = 'https://www.bitstamp.net';
 
@@ -37,6 +38,7 @@ Bitstamp.prototype.postReq = function(action, callback, params) {
 		url: this.url + path,
 		method: 'POST',
 		headers: headers,
+    timeout: this.timeoutMS,
 		form: params
 	};
 
@@ -81,7 +83,8 @@ Bitstamp.prototype.getReq = function(action, callback, params) {
     url: this.url + path,
     method: 'GET',
     headers: headers,
-    qs: params
+    qs: params,
+    timeout: this.timeoutMS
   };
 
   var req = request.get(options, function(error, response, body) {
