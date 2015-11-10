@@ -7,6 +7,7 @@ var Bitstamp = function(key, secret, client_id) {
   this.secret = secret;
   this.client_id = client_id;
   this.timeoutMS = 5000;
+  this.orderPriceMaxDecimals = 2;
 
   this.url = 'https://www.bitstamp.net';
 
