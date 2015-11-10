@@ -8,6 +8,8 @@ var Bitstamp = function(key, secret, client_id) {
   this.client_id = client_id;
   this.timeoutMS = 5000;
   this.orderPriceMaxDecimals = 2;
+  this.minimumOrderSize = 5;
+  // Bitstamp enforces a USD 5.00 minimum order size. https://www.bitstamp.net/article/bitstamp-minimum-trade-changing-to-5/
 
   this.url = 'https://www.bitstamp.net';
 
