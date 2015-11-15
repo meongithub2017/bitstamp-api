@@ -1,1 +1,15 @@
+# OSX
 .DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# All
+.idea
+
+# Project
+node_modules
+npm-debug.log
