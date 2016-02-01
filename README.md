@@ -4,7 +4,7 @@ bitstamp-api is a simple wrapper for communicating with BitStamp in Node.JS.
 
 ## Installation
 
-    npm install bistamp-api
+    npm install bitstamp-api
 
 ## Usage
 
