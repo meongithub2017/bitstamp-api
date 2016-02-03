@@ -153,6 +153,10 @@ Bitstamp.prototype.balance = function(callback) {
   this.postReq('balance', callback);
 };
 
+Bitstamp.prototype.order_status = function (id, callback) {
+  this._post('order_status', callback, {id: id});
+};
+
 Bitstamp.prototype.user_transactions = function(timedelta, callback) {
   if(!callback) {
     callback = timedelta;
